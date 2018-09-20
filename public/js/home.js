@@ -39,20 +39,6 @@ $(document).ready(function(){
 		}
     });
 
-/*    // mark task as in-progress
-	$('.toggleBtn').not('.complete').on('click', function(){
-        // get task id of task selected
-        var button = $(this);
-        var listItem = $(this).closest('li');
-        var taskId = listItem.attr('id').slice(1);
-	    console.log("mark as incomplete");
-	    
-	    $.get('/resume', 'id=' + taskId, function(){
-	        $('#t' + taskId + ' .completed').html('<b>Status:</b> In-Progress');
-	        toggleButton(button);
-	    });
-    });  */  
-    
     // remove task
     $('.deleteBtn').on('click', function(){
         var listItem = $(this).closest('li');
