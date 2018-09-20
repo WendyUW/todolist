@@ -1,0 +1,33 @@
+<h2>Edit task:</h2>
+
+<div class="taskDisplay">
+     <form action="/edit/{{id}}" method="post">
+        Task name:<br>
+          <input type="text" name="task" value="{{task}}"><br><br>
+        Date:<br>
+          <input type="date" name="date" value="{{date}}"><br><br>
+        Time:<br>
+          <input type="time" name="time" value="{{time}}"><br><br>
+        Location:<br>
+          <input type="text" name="location" value="{{location}}"><br><br>
+        Status:<br>
+           <select name="completed">
+           {{#if completed}}
+              <option value="false">In-progress</option>
+              <option value="true" selected>Completed!</option>
+           {{else}}
+              <option value="false" selected>In-progress</option>
+              <option value="true">Completed!</option>
+           {{/if}}
+           </select>
+           <br><br>
+        Description:<br>
+          <textarea name="description" rows="5" cols="70">{{description}}</textarea><br>
+        <input type="submit" value="Save Changes">
+    </form> 
+</div>
+
+<div class="previousPage">
+    <a href="/home">Back</a>
+</div>
+

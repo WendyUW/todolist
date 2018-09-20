@@ -1,0 +1,9 @@
+.tasklistDisplay {
+    border-style: solid;
+}
+
+.createDisplay {
+    border-style: solid;
+    padding: 20px;
+	margin-top: 10px;
+}
