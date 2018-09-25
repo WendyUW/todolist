@@ -7,7 +7,7 @@ function getTodolist(req, res){
 
     // render page with todo data using returned promise
     todolist.getAllTodos().then(function(data){
-        res.render('index', {todos: data});
+        res.render('index', {todos: data, css: ['home.css']});
     }).catch(function(error){
         console.log(error.message);
     });
@@ -30,7 +30,7 @@ function editTaskGet(req, res){
     
     // render task view page with selected task object info
     todolist.getTodo(parseInt(req.params.id)).then(function(data){
-        res.render('task', data);
+        res.render('task', {todo: data, css: ['edit.css']});
     }).catch(function(error){
         console.log(error.message);
     });

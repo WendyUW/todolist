@@ -18,7 +18,7 @@ function redirectToLogin(req, res){
 }
 
 function loginGet(req, res){
-    res.render('login');
+    res.render('login', {css: ['login_signup.css']});
 }
 
 function loginPost(req, res){
@@ -47,7 +47,7 @@ function loginPost(req, res){
 }
 
 function signupGet(req, res){
-    res.render('signup');
+    res.render('signup', {css: ['login_signup.css']});
 }
 
 function signupPost(req, res){
