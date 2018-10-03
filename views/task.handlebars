@@ -1,17 +1,28 @@
-<h2>Edit task:</h2>
+<h2>Edit task</h2>
 
 <div class="taskDisplay">
-     <form action="/edit/{{id}}" method="post">
-        Task name:<br>
-          <input type="text" name="task" value="{{task}}"><br><br>
-        Date:<br>
-          <input type="date" name="date" value="{{date}}"><br><br>
-        Time:<br>
-          <input type="time" name="time" value="{{time}}"><br><br>
-        Location:<br>
-          <input type="text" name="location" value="{{location}}"><br><br>
-        Status:<br>
-           <select name="completed">
+     <form action="/edit/{{todo.id}}" method="post">
+        <div class="form-group">
+          <label for="taskname">Task name:</label>
+          <input type="text" class="form-control" name="task" value="{{todo.task}}">
+        </div>
+        <div class="row">
+          <div class="col form-group">
+            <label for="date">Date:</label>
+            <input type="date" class="form-control" name="date" value="{{todo.date}}">
+          </div>
+          <div class="col form-group">
+            <label for="time">Time:</label>
+            <input type="time" class="form-control" name="time" value="{{todo.time}}">
+          </div>
+        </div>  
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" class="form-control" name="location" value="{{todo.location}}">
+        </div>
+        <div class="form-group">
+          <label for="status">Status:</label>
+          <select class="form-control" name="completed">
            {{#if completed}}
               <option value="false">In-progress</option>
               <option value="true" selected>Completed!</option>
@@ -19,15 +30,17 @@
               <option value="false" selected>In-progress</option>
               <option value="true">Completed!</option>
            {{/if}}
-           </select>
-           <br><br>
-        Description:<br>
-          <textarea name="description" rows="5" cols="70">{{description}}</textarea><br>
-        <input type="submit" value="Save Changes">
+           </select>         
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea class="form-control" name="description" rows="3">{{todo.description}}</textarea><br>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
     </form> 
 </div>
 
 <div class="previousPage">
-    <a href="/home">Back</a>
+    <a href="/home">Back to Home</a>
 </div>
 

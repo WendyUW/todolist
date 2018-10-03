@@ -42,7 +42,8 @@ function loginPost(req, res){
         })
         .catch(function(error){
             console.log(error.message);
-            res.render('login', {message: "Please try again"});
+            res.render('login', {css: ['login_signup.css'], 
+                                 message: "Sorry, the credentials were invalid. Please try again."});
         });
 }
 

@@ -1,6 +1,8 @@
 <div class="loginDiv">
-	<h3>Log in to Todo</h3>
-	{{message}}
+	<h3>Log in to To-do</h3>
+    {{#if message}}
+      <div class="alert alert-danger" role="alert">{{message}}</div>
+    {{/if}}
 	<form action="/login" method="post">
 		<div class="form-group">
 			<label for="username">User name:</label>
